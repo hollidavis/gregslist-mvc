@@ -4,7 +4,6 @@ import Car from "../Models/Car.js"
 
 class CarsService {
   createCar(rawCar) {
-    debugger
     ProxyState.cars = [...ProxyState.cars, new Car(rawCar)]
   }
 }

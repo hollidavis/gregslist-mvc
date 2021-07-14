@@ -13,7 +13,7 @@ export default class Job {
               <div class="text-center">
                   <p><b>${this.title} - $${this.pay} - ${this.company}</b></p>
               </div>
-              <p>${this.description}</p>
+              <p class="text-center">${this.description}</p>
           </div>
       </div>
     </div>

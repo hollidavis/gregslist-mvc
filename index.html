@@ -23,8 +23,15 @@
     </header>
     <main class="container">
         <!-- Cars -->
+        <!-- Listing Heading -->
+        <div class="row my-3">
+            <div class="col text-center">
+                <H3>Car Listings</H3>
+            </div>
+        </div>
+        <!-- Car Form -->
         <div class="row">
-            <div class="col mt-5">
+            <div class="col">
                 <form class="d-flex" onsubmit="app.carsController.createCar()">
                     <div class="form-group">
                         <label for="make">Make</label>
@@ -54,17 +61,24 @@
                             placeholder="Description..." maxlength="240">
                     </div>
                     <div class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-outline-success">Add</button>
+                        <button type="submit" class="btn btn-outline-success">Post</button>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="row" id="cars">
-        </div>
+        <!-- Car Cards -->
+        <div class="row" id="cars"></div>
         <!-- Houses -->
+        <!-- Listing Heading -->
+        <div class="row my-3">
+            <div class="col text-center">
+                <H3>House Listings</H3>
+            </div>
+        </div>
+        <!-- House Form -->
         <div class="row">
             <col class="mt-5">
-            <form class="d-flex" onsubmit="">
+            <form class="d-flex" onsubmit="app.housesController.createHouse()">
                 <div class="form-group">
                     <label for="bed">Beds</label>
                     <input type="number" name="bed" id="bed" class="form-control" placeholder="Beds..." required>
@@ -85,11 +99,11 @@
                 </div>
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="number" name="price" id="price" class="form-control" placeholder="Price...">
+                    <input type="number" name="price" id="price" class="form-control" placeholder="Price..." required>
                 </div>
                 <div class="form-group">
-                    <label for="imgURL">Image URL</label>
-                    <input type="text" name="imgURL" id="imgURL" class="form-control" placeholder="URL...">
+                    <label for="imgUrl">Image URL</label>
+                    <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="URL...">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
@@ -97,10 +111,13 @@
                         placeholder="Description..." maxlength="240">
                 </div>
                 <div class="d-flex align-items-center">
-                    <button type="submit" class="btn btn-outline-success">Add</button>
+                    <button type="submit" class="btn btn-outline-success">Post</button>
                 </div>
             </form>
             </col>
+        </div>
+        <!-- House Cards -->
+        <div class="row" id="houses">
         </div>
     </main>
     <footer class="bg-primary text-light">

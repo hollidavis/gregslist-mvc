@@ -1,5 +1,6 @@
 import Car from "./Models/Car.js"
 import House from "./Models/House.js"
+import Job from "./Models/Job.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
@@ -43,6 +44,22 @@ class AppState extends EventEmitter {
       price: 650000,
       description: 'Large home! Perfect for you and your family.',
       imgUrl: 'https://www.thehousedesigners.com/images/plans/UDC/bulk/7539/Oleksandr-Meresi_View02.jpg'
+    })
+  ]
+
+  /** @type {Job[]} */
+  jobs = [
+    new Job({
+      title: 'Barista',
+      pay: 15,
+      company: 'Starbucks',
+      description: 'Come make coffee for a living!'
+    }),
+    new Job({
+      title: 'Software Developer',
+      pay: 100,
+      company: 'CodeWorks',
+      description: 'Come find typos for a living!'
     })
   ]
 

@@ -1,5 +1,5 @@
 export default class Car {
-  // OBJECT DESCONSCTRUCTION
+  // OBJECT DECONSTRUCTION
   // using the {} you can pull only the properties you care about off the incoming object
   // the '=' allows setting default values incase that property was not provided
   constructor({ make, model, year, price, description, imgUrl }) {

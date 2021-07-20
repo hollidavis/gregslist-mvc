@@ -42,40 +42,34 @@
                 </div>
             </div>
             <!-- Car Form -->
-            <div class="row justify-content-center">
+            <div class="row">
                 <div class="col">
-                    <form class="d-flex" onsubmit="app.carsController.createCar()">
-                        <div class="form-group">
-                            <label for="make">Make</label>
+                    <form class="d-flex justify-content-center" onsubmit="app.carsController.createCar()">
+                        <div class="form-group mx-2">
                             <input type="text" name="make" id="make" class="form-control" placeholder="Make..."
                                 required>
                         </div>
-                        <div class="form-group">
-                            <label for="model">Model</label>
+                        <div class="form-group mx-2">
                             <input type="text" name="model" id="model" class="form-control" placeholder="Model..."
                                 required>
                         </div>
-                        <div class="form-group">
-                            <label for="year">Year</label>
+                        <div class="form-group mx-2">
                             <input type="number" name="year" id="year" class="form-control" placeholder="Year..."
                                 required min="1950" max="2021">
                         </div>
-                        <div class="form-group">
-                            <label for="price">Price</label>
+                        <div class="form-group mx-2">
                             <input type="number" name="price" id="price" class="form-control" placeholder="Price..."
                                 required min="1">
                         </div>
-                        <div class="form-group">
-                            <label for="imgUrl">Image Url</label>
+                        <div class="form-group mx-2">
                             <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Url...">
                         </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
+                        <div class="form-group mx-2">
                             <input type="text" name="description" id="description" class="form-control"
                                 placeholder="Description..." maxlength="240">
                         </div>
-                        <div class="d-flex align-items-center">
-                            <button type="submit" class="btn btn-success btn-fix">Post</button>
+                        <div class="mx-2">
+                            <button type="submit" class="btn btn-success">Post</button>
                         </div>
                     </form>
                 </div>
@@ -95,48 +89,41 @@
                 </div>
             </div>
             <!-- House Form -->
-            <div class="row justify-content-center">
-                <col class="mt-5">
-                <form class="d-flex" onsubmit="app.housesController.createHouse()">
-                    <div class="form-group">
-                        <label for="bedrooms">Bedrooms</label>
-                        <input type="number" name="bedrooms" id="bedrooms" class="form-control"
-                            placeholder="Bedrooms..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="bathrooms">Bathrooms</label>
-                        <input type="number" name="bathrooms" id="bathrooms" class="form-control"
-                            placeholder="Bathrooms..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="levels">Levels</label>
-                        <input type="number" name="levels" id="levels" class="form-control" placeholder="Levels..."
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="year">Year Built</label>
-                        <input type="number" name="year" id="year" class="form-control" placeholder="Year Built..."
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Price</label>
-                        <input type="number" name="price" id="price" class="form-control" placeholder="Price..."
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="imgUrl">Image URL</label>
-                        <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="URL...">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <input type="text" name="description" id="description" class="form-control"
-                            placeholder="Description..." maxlength="240">
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-success btn-fix">Post</button>
-                    </div>
-                </form>
-                </col>
+            <div class="row">
+                <div class="col">
+                    <form class="d-flex justify-content-center" onsubmit="app.housesController.createHouse()">
+                        <div class="form-group mx-2">
+                            <input type="number" name="bedrooms" id="bedrooms" class="form-control"
+                                placeholder="Bedrooms..." required>
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="number" name="bathrooms" id="bathrooms" class="form-control"
+                                placeholder="Bathrooms..." required>
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="number" name="levels" id="levels" class="form-control" placeholder="Levels..."
+                                required>
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="number" name="year" id="year" class="form-control" placeholder="Year Built..."
+                                required>
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="number" name="price" id="price" class="form-control" placeholder="Price..."
+                                required>
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="URL...">
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="text" name="description" id="description" class="form-control"
+                                placeholder="Description..." maxlength="240">
+                        </div>
+                        <div class="mx-2">
+                            <button type="submit" class="btn btn-success">Post</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <!-- House Cards -->
             <div class="card-columns" id="houses">
@@ -153,38 +140,34 @@
                 </div>
             </div>
             <!-- Job Form -->
-            <div class="row justify-content-center">
-                <col class="mt-5">
-                <form class="d-flex" onsubmit="app.jobsController.createJob()">
-                    <div class="form-group">
-                        <label for="jobTitle">Job Title</label>
-                        <input type="text" name="jobTitle" id="jobTitle" class="form-control" placeholder="Job Title..."
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company</label>
-                        <input type="text" name="company" id="company" class="form-control" placeholder="Company..."
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="rate">Rate</label>
-                        <input type="number" name="rate" id="rate" class="form-control" placeholder="Rate..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="hours">Hours</label>
-                        <input type="number" name="hours" id="hours" class="form-control" placeholder="Hours..."
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <input type="text" name="description" id="description" class="form-control"
-                            placeholder="Description..." maxlength="350">
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-success btn-fix">Post</button>
-                    </div>
-                </form>
-                </col>
+            <div class="row">
+                <div class="col">
+                    <form class="d-flex justify-content-center" onsubmit="app.jobsController.createJob()">
+                        <div class="form-group mx-2">
+                            <input type="text" name="jobTitle" id="jobTitle" class="form-control"
+                                placeholder="Job Title..." required>
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="text" name="company" id="company" class="form-control" placeholder="Company..."
+                                required>
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="number" name="rate" id="rate" class="form-control" placeholder="Rate..."
+                                required>
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="number" name="hours" id="hours" class="form-control" placeholder="Hours..."
+                                required>
+                        </div>
+                        <div class="form-group mx-2">
+                            <input type="text" name="description" id="description" class="form-control"
+                                placeholder="Description..." maxlength="350">
+                        </div>
+                        <div class="mx-2">
+                            <button type="submit" class="btn btn-success">Post</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <!-- Job Cards -->
             <div class="card-columns" id="jobs">

@@ -7,9 +7,6 @@ body {
 main {
   flex-grow: 1;
 }
-.btn-fix{
-  margin-top: 16px;
-}
 
 :root{
   scroll-behavior: smooth;

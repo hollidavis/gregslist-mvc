@@ -21,7 +21,7 @@ export default class Car {
               <p><em>$${this.price}</em></p>
               <button class="btn btn-success btn-block" onclick="app.carsController.bidCar('${this.id}')"> Bid </button>
               <button class="btn btn-danger btn-block" onclick="app.carsController.deleteCar('${this.id}')"> Delete </button>
-      </div>
+          </div>
     </div>
     `
   }

@@ -1,7 +1,9 @@
 export default class Job {
-  constructor({ title, pay, company, description }) {
-    this.title = title
-    this.pay = pay
+  constructor({ jobTitle, rate, company, description, id, hours }) {
+    this.id = id
+    this.jobTitle = jobTitle
+    this.rate = rate
+    this.hours = hours
     this.company = company
     this.description = description
   }
@@ -11,9 +13,12 @@ export default class Job {
       <div class="bg-light shadow">
           <div class="p-3">
               <div class="text-center">
-                  <p><b>${this.title} - $${this.pay} - ${this.company}</b></p>
+                  <p><b>${this.jobTitle} - ${this.company}</b></p>
+                  <p>$${this.rate}/hr - ${this.hours}hrs/week</p>
               </div>
               <p class="text-center">${this.description}</p>
+              <button class="btn btn-success btn-block" onclick="app.jobsController.applyJob()"> Apply </button>
+              <button class="btn btn-danger btn-block" onclick="app.jobsController.deleteJob('${this.id}')"> Delete </button>
           </div>
       </div>
     </div>

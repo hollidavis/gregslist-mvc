@@ -94,16 +94,18 @@
             <col class="mt-5">
             <form class="d-flex" onsubmit="app.housesController.createHouse()">
                 <div class="form-group">
-                    <label for="bed">Beds</label>
-                    <input type="number" name="bed" id="bed" class="form-control" placeholder="Beds..." required>
+                    <label for="bedrooms">Bedrooms</label>
+                    <input type="number" name="bedrooms" id="bedrooms" class="form-control" placeholder="Bedrooms..."
+                        required>
                 </div>
                 <div class="form-group">
-                    <label for="bath">Baths</label>
-                    <input type="number" name="bath" id="bath" class="form-control" placeholder="Baths..." required>
+                    <label for="bathrooms">Bathrooms</label>
+                    <input type="number" name="bathrooms" id="bathrooms" class="form-control" placeholder="Bathrooms..."
+                        required>
                 </div>
                 <div class="form-group">
-                    <label for="sqft">Square Feet</label>
-                    <input type="number" name="sqft" id="sqft" class="form-control" placeholder="Square Footage..."
+                    <label for="levels">Levels</label>
+                    <input type="number" name="levels" id="levels" class="form-control" placeholder="Levels..."
                         required>
                 </div>
                 <div class="form-group">
@@ -183,6 +185,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="app/main.js" type="module"></script>
 </body>
 

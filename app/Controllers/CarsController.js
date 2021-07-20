@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { carsService } from "../Services/CarsService.js"
+import NotificationsService from "../Services/NotificationsService.js";
 
 function _draw() {
   let template = ''
@@ -11,11 +12,7 @@ function _draw() {
 
 export default class CarsController {
   constructor() {
-    // When 'cars' changes in the State run the _draw method
     ProxyState.on('cars', _draw)
-    ProxyState.on('cars', () => { console.log('new car') })
-
-    // This only runs when the app first loads because data is already in the state
     _draw()
   }
 
@@ -32,18 +29,28 @@ export default class CarsController {
         imgUrl: form.imgUrl.value
       }
       await carsService.createCar(rawCar)
+      NotificationsService.toast("Car created!")
       form.reset()
     } catch (error) {
       console.error(error)
-      window.alert(error.message)
     }
   }
-  deleteCar(carId) {
-    console.log('you are trying to delete a car by the id of', carId)
-    carsService.deleteCar(carId)
+  async deleteCar(carId) {
+    try {
+      await carsService.deleteCar(carId)
+      NotificationsService.toast("Car deleted!", "error")
+      console.log('you are trying to delete a car by the id of', carId)
+    } catch (error) {
+      console.error(error)
+    }
   }
-  bidCar(carId) {
-    console.log('your are bidding on the car with the id of', carId)
-    carsService.bidCar(carId)
+  async bidCar(carId) {
+    try {
+      await carsService.bidCar(carId)
+      NotificationsService.toast("Bid submitted!")
+      console.log('you are bidding on the car with the id of', carId)
+    } catch (error) {
+      console.error(error)
+    }
   }
 }

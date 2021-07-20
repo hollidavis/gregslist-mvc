@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { housesService } from "../Services/HousesService.js"
+import NotificationsService from "../Services/NotificationsService.js";
 
 function _draw() {
   let template = ''
@@ -15,27 +16,42 @@ export default class HousesController {
     _draw()
   }
 
-  createHouse() {
-    event.preventDefault()
-    let form = event.target
-    let rawHouse = {
-      // @ts-ignore
-      bed: form.bed.value,
-      // @ts-ignore
-      bath: form.bath.value,
-      // @ts-ignore
-      sqft: form.sqft.value,
-      // @ts-ignore
-      year: form.year.value,
-      // @ts-ignore
-      price: form.price.value,
-      // @ts-ignore
-      description: form.description.value,
-      // @ts-ignore
-      imgUrl: form.imgUrl.value
+  async createHouse() {
+    try {
+      event.preventDefault()
+      let form = event.target
+      let rawHouse = {
+        bedrooms: form.bedrooms.value,
+        bathrooms: form.bathrooms.value,
+        levels: form.levels.value,
+        year: form.year.value,
+        price: form.price.value,
+        description: form.description.value,
+        imgUrl: form.imgUrl.value
+      }
+      await housesService.createHouse(rawHouse)
+      NotificationsService.toast("House created!")
+      form.reset()
+    } catch (error) {
+      console.error(error)
     }
-    housesService.createHouse(rawHouse)
-    // @ts-ignore
-    form.reset()
+  }
+  async deleteHouse(houseId) {
+    try {
+      await housesService.deleteHouse(houseId)
+      NotificationsService.toast("House deleted!", "error")
+      console.log('you are trying to delete a house by the id of', houseId)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  async bidHouse(houseId) {
+    try {
+      await housesService.bidHouse(houseId)
+      NotificationsService.toast("Bid submitted!")
+      console.log('you are bidding on the house with the id of', houseId)
+    } catch (error) {
+      console.error(error)
+    }
   }
 }

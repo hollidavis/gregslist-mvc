@@ -7,10 +7,8 @@ class CarsService {
     this.getAllCars()
   }
   async createCar(rawCar) {
-    console.log('creating car step 2')
     const res = await api.post('cars', rawCar)
-    console.log('your new car sir', res.data)
-    console.log('creating car step 3')
+    console.log('your new car', res.data)
     ProxyState.cars = [...ProxyState.cars, new Car(res.data)]
 
   }
@@ -25,30 +23,16 @@ class CarsService {
     }
   }
   async bidCar(carId) {
-    try {
-      let foundCar = ProxyState.cars.find(c => c.id == carId)
-      foundCar.price += 100
-      const res = await api.put('cars/' + carId, foundCar)
-      console.log('updated car', res.data)
-
-      ProxyState.cars = ProxyState.cars
-      // this.getAllCars()
-    } catch (error) {
-      console.error(error)
-    }
+    let foundCar = ProxyState.cars.find(c => c.id == carId)
+    foundCar.price += 100
+    const res = await api.put('cars/' + carId, foundCar)
+    console.log('updated car', res.data)
+    ProxyState.cars = ProxyState.cars
   }
   async deleteCar(carId) {
-    try {
-      // NOTE Deletes from data base
-      const res = await api.delete('cars/' + carId)
-      console.log(res.data)
-      // NOTE this updates the local state
-      ProxyState.cars = ProxyState.cars.filter(c => c.id != carId)
-      // NOTE updates the local state BUT makes additional network requests
-      // this.getAllCars()
-    } catch (error) {
-      console.error(error)
-    }
+    const res = await api.delete('cars/' + carId)
+    console.log(res.data)
+    ProxyState.cars = ProxyState.cars.filter(c => c.id != carId)
   }
 }
 

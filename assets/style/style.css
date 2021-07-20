@@ -1,3 +1,7 @@
 .btn-fix{
   margin-top: 16px;
 }
+
+:root{
+  scroll-behavior: smooth;
+}

@@ -19,25 +19,31 @@ export default class CarsController {
     _draw()
   }
 
-  createCar() {
-    event.preventDefault()
-    let form = event.target
-    let rawCar = {
-      // @ts-ignore
-      make: form.make.value,
-      // @ts-ignore
-      model: form.model.value,
-      // @ts-ignore
-      year: form.year.value,
-      // @ts-ignore
-      price: form.price.value,
-      // @ts-ignore
-      description: form.description.value,
-      // @ts-ignore
-      imgUrl: form.imgUrl.value
+  async createCar() {
+    try {
+      event.preventDefault()
+      let form = event.target
+      let rawCar = {
+        make: form.make.value,
+        model: form.model.value,
+        year: form.year.value,
+        price: form.price.value,
+        description: form.description.value,
+        imgUrl: form.imgUrl.value
+      }
+      await carsService.createCar(rawCar)
+      form.reset()
+    } catch (error) {
+      console.error(error)
+      window.alert(error.message)
     }
-    carsService.createCar(rawCar)
-    // @ts-ignore
-    form.reset()
+  }
+  deleteCar(carId) {
+    console.log('you are trying to delete a car by the id of', carId)
+    carsService.deleteCar(carId)
+  }
+  bidCar(carId) {
+    console.log('your are bidding on the car with the id of', carId)
+    carsService.bidCar(carId)
   }
 }

@@ -1,23 +1,13 @@
 export default class Car {
-  // OBJECT DECONSTRUCTION
-  // using the {} you can pull only the properties you care about off the incoming object
-  // the '=' allows setting default values incase that property was not provided
-  constructor({ make, model, year, price, description, imgUrl }) {
+  constructor({ make, model, year, price, description, imgUrl, id }) {
+    this.id = id
     this.make = make
     this.model = model
     this.year = year
     this.price = price
     this.description = description || "no car description"
-    this.imgUrl = imgUrl || '//placehold.it/200x200'
+    this.imgUrl = imgUrl
   }
-  // constructor(data) {
-  //   this.make = data.make
-  //   this.model = data.model
-  //   this.year = data.year
-  //   this.price = data.price
-  //   this.description = data.description || "no description provided"
-  //   this.imgUrl = data.imgUrl
-  // }
 
   get Template() {
     return `
@@ -30,6 +20,8 @@ export default class Car {
               </div>
               <p>${this.description}</p>
               <p><em>$${this.price}</em></p>
+              <button class="btn btn-info btn-block" onclick="app.carsController.bidCar('${this.id}')"> bid </button>
+              <button class="btn btn-warning btn-block" onclick="app.carsController.deleteCar('${this.id}')"> delete </button>
           </div>
       </div>
     </div>

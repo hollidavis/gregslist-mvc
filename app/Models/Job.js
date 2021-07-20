@@ -9,9 +9,8 @@ export default class Job {
   }
   get Template() {
     return `
-    <div class="col-md-4 my-3">
-      <div class="bg-light shadow">
-          <div class="p-3">
+    <div class="card shadow">
+          <div class="card-body">
               <div class="text-center">
                   <p><b>${this.jobTitle} - ${this.company}</b></p>
                   <p>$${this.rate}/hr - ${this.hours}hrs/week</p>
@@ -20,7 +19,6 @@ export default class Job {
               <button class="btn btn-success btn-block" onclick="app.jobsController.applyJob()"> Apply </button>
               <button class="btn btn-danger btn-block" onclick="app.jobsController.deleteJob('${this.id}')"> Delete </button>
           </div>
-      </div>
     </div>
     `
   }

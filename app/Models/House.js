@@ -11,10 +11,9 @@ export default class House {
   }
   get Template() {
     return `
-    <div class="col-md-4 my-3">
-      <div class="bg-light shadow">
-          <img src="${this.imgUrl}" class="w-100" alt="${this.bedrooms} ${this.bathrooms} house image">
-          <div class="p-3">
+    <div class="card shadow">
+          <img src="${this.imgUrl}" class="card-img-top" alt="${this.bedrooms} ${this.bathrooms} house image">
+          <div class="card-body">
               <div class="text-center">
                   <p><b>${this.bedrooms} bed - ${this.bathrooms} bath - ${this.levels} level</b></p>
               </div>

@@ -1,3 +1,13 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 65px; 
+}
+
+main {
+  flex-grow: 1;
+}
 .btn-fix{
   margin-top: 16px;
 }
